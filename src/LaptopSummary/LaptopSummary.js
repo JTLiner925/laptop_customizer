@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+// import Total from '../Total/Total';
 import "./LaptopSummary.css";
+// import SummaryItems from "../SummaryItems/SummaryItems";
 
 class LaptopSummary extends Component {
     state ={}
@@ -21,10 +23,15 @@ class LaptopSummary extends Component {
     return (
       <div>
         <h2>Your cart</h2>
-        <div>{summary}</div>
+        <div>
+        {summary}
+        {/* <SummaryItems /> */}
+        </div>
         <div className="summary__total">
           <div className="summary__total__label">Total</div>
-          <div className="summary__total__value">{this.props.total}</div>
+          <div className="summary__total__value">
+          {this.props.total}
+          </div>
         </div>
       </div>
     );
