@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-
+import LaptopSummary from './LaptopSummary/LaptopSummary';
+import FormFilters from './FormFilters/FormFilters';
 // Normalizes string as a slug - a string that is safe to use
 // in both URLs and html attributes
 import slugify from 'slugify';
-
 import './App.css';
 
 // This object will allow us to
@@ -14,6 +14,7 @@ const USCurrencyFormat = new Intl.NumberFormat('en-US', {
 });
 
 class App extends Component {
+  //static defaultProps in App component
   state = {
     selected: {
       Processor: {
@@ -34,7 +35,7 @@ class App extends Component {
       }
     }
   };
-
+  //callbackProp
   updateFeature = (feature, newValue) => {
     const selected = Object.assign({}, this.state.selected);
     selected[feature] = newValue;
@@ -101,10 +102,8 @@ class App extends Component {
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
-          <form className="main__form">
-            <h2>Customize your laptop</h2>
-            {features}
-          </form>
+          <FormFilters 
+          handleCurrency={this.USCurrencyFormat}/>
           <section className="main__summary">
             <h2>Your cart</h2>
             {summary}
