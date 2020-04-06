@@ -3,11 +3,14 @@ import slugify from 'slugify';
 import './FormFilters.css';
 
 class FormFilters extends Component {
+    state = {};
     render() {
-        const features = this.props.features.map((feature, idx) => {
+        console.log(this.props)
+        const features = Object.keys(this.props.features).map((feature, idx) => {
           const featureHash = feature + '-' + idx;
 
           const options = this.props.features[feature].map(item => {
+              console.log(item.cost)
             const itemHash = slugify(JSON.stringify(item));
             return (
               <div key={itemHash} className="feature__item">
@@ -16,11 +19,11 @@ class FormFilters extends Component {
                   id={itemHash}
                   className="feature__option"
                   name={slugify(feature)}
-                  checked={item.name === this.state.selected[feature].name}
-                  onChange={e => this.updateFeature(feature, item)}
+                  checked={item.name === this.props.selected[feature].name}
+                  onChange={e => this.props.updateFeature(feature, item)}
                 />
                 <label htmlFor={itemHash} className="feature__label">
-                  {item.name} {this.props.handleCurrency}
+                  {item.name} ({this.props.handleCurrency.format(item.cost)})
                 </label>
               </div>
             );
