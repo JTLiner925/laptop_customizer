@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import slugify from 'slugify';
+// import FilterItem from '../FilterItem/FilterItem';
 import './FormFilters.css';
 
-class FormFilters extends Component {
-    state = {};
+    class FormFilters extends Component {
+        state = {};
     render() {
         console.log(this.props)
         const features = Object.keys(this.props.features).map((feature, idx) => {
@@ -34,6 +35,7 @@ class FormFilters extends Component {
               <legend className="feature__name">
                 <h3>{feature}</h3>
               </legend>
+                {/* <FilterItem /> */}
               {options}
             </fieldset>
           );
