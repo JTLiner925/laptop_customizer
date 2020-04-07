@@ -4,7 +4,6 @@ import "./SummaryItem.css";
 class SummaryItem extends Component {
   state = {};
   render() {
-    console.log(this.props);
     const itemSummary = Object.keys(this.props.selected)
     const summary = itemSummary.map((feature, idx) => {
       const featureHash = feature + "-" + idx;

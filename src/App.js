@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import LaptopSummary from './LaptopSummary/LaptopSummary';
 import FormFilters from './FormFilters/FormFilters';
-// Normalizes string as a slug - a string that is safe to use
-// in both URLs and html attributes
-// import slugify from 'slugify';
 import './App.css';
 
 const USCurrencyFormat = new Intl.NumberFormat('en-US', {
