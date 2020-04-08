@@ -7,12 +7,12 @@ class Total extends Component {
     const grandTotal = Object.keys(this.props.selected);
     return (
       <div>
-        {grandTotal.reduce(
+        {this.props.handleCurrency.format(grandTotal.reduce(
           (acc, curr) => acc + this.props.selected[curr].cost,
           0
-        )}
+        ))}
       </div>
-    );
+        );
   }
 }
 export default Total;

@@ -18,7 +18,10 @@ class LaptopSummary extends Component {
         <div className="summary__total">
           <div className="summary__total__label">Total</div>
           <div className="summary__total__value">
-            <Total total={this.props.total} selected={this.props.selected} />
+            <Total 
+            total={this.props.total} 
+            selected={this.props.selected}
+            handleCurrency={this.props.handleCurrency} />
           </div>
         </div>
       </div>
