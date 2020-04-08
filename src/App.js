@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LaptopSummary from './LaptopSummary/LaptopSummary';
 import FormFilters from './FormFilters/FormFilters';
+import FEATURES from './Features';
 import './App.css';
 
 const USCurrencyFormat = new Intl.NumberFormat('en-US', {
@@ -51,12 +52,12 @@ class App extends Component {
         <main>
           <FormFilters
           updateFeature={this.updateFeature}
-           features={this.props.features}
+           features={FEATURES}
            selected={this.state.selected}
           handleCurrency={USCurrencyFormat}/>
           <section className="main__summary">
             <LaptopSummary
-            features={this.props.features}
+            features={FEATURES}
            selected={this.state.selected} 
            handleCurrency={USCurrencyFormat}
            total={total}/>
