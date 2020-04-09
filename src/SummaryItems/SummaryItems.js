@@ -9,16 +9,6 @@ class SummaryItems extends Component {
     const summary = itemSummary.map((feature, idx) => {
       const featureHash = feature + "-" + idx;
       const selectedOption = this.props.selected[feature];
-
-      // return (
-      //   <div className="summary__option" key={featureHash}>
-      //     <div className="summary__option__label">{feature} </div>
-      //     <div className="summary__option__value">{selectedOption.name}</div>
-      //     <div className="summary__option__cost">
-      //       {this.props.handleCurrency.format(selectedOption.cost)}
-      //     </div>
-      //   </div>
-      // );
       return (
         <SummaryItem
         key={featureHash}
